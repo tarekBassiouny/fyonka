@@ -12,20 +12,37 @@ class AuthService implements AuthServiceInterface
 {
     public function attemptWeb(array $credentials, bool $remember = false): bool
     {
-        return Auth::attempt($credentials, $remember);
+        if (!Auth::attempt($credentials, $remember)) {
+            return false;
+        }
+
+        if (Auth::user()?->source === 'api') {
+            Auth::logout();
+            throw ValidationException::withMessages([
+                'error' => __('auth.dashboard_login_not_allowed'),
+            ]);
+        }
+
+        return true;
     }
 
     public function attemptApi(array $credentials): User
     {
         if (!Auth::attempt($credentials)) {
             throw ValidationException::withMessages([
-                'error' => ['Invalid credentials'],
+                'error' => __('auth.invalid_credentials'),
             ]);
         }
 
         $user = Auth::user();
 
-        // Create token for third-party access
+        if ($user->source === 'dashboard') {
+            Auth::logout();
+            throw ValidationException::withMessages([
+                'error' => [__('auth.api_login_not_allowed')],
+            ]);
+        }
+
         $user->token = $user->createToken('token')->plainTextToken;
 
         return $user;

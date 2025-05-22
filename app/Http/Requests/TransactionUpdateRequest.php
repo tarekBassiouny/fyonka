@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\AmountMatchesType;
+use App\Rules\SubtypeBelongsToType;
 
 class TransactionUpdateRequest extends FormRequest
 {
@@ -22,13 +24,21 @@ class TransactionUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'amount' => 'required|numeric',
+            'amount' => [
+                'required',
+                'numeric',
+                new AmountMatchesType($this->input('type_id')),
+            ],
             'description' => 'nullable|string',
             'type' => 'required|in:income,outcome',
             'date' => 'required|date',
             'store_id' => 'sometimes|exists:stores,id',
             'type_id' => 'sometimes|exists:transaction_types,id',
-            'subtype_id' => 'sometimes|exists:transaction_subtypes,id',
+            'subtype_id' => [
+                'required',
+                'exists:transaction_subtypes,id',
+                new SubtypeBelongsToType($this->input('type_id')),
+            ],
             'is_temp' => 'boolean',
         ];
     }

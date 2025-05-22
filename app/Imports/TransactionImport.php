@@ -40,6 +40,7 @@ class TransactionImport implements ToModel, WithHeadingRow
             'source' => 'csv',
             'source_detail' => $this->filename,
             'uploaded_file_id' => $this->uploadedFileId,
+            'creator_id' => auth()->user()?->id,
 
             // Extra fields (translated from German headers)
             'ordering_account'       => $row['auftragskonto'] ?? null,

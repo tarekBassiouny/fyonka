@@ -34,4 +34,7 @@ return [
     'select_value' => 'Wert auswählen',
     'bulk_rejected' => 'Ausgewählte Transaktionen wurden abgelehnt.',
     'error_bulk_rejected' => 'Ausgewählte Transaktionen konnten nicht abgelehnt werden. Bitte versuchen Sie es erneut.',
+    'amount_must_be_negative' => 'Der Betrag muss für Ausgaben negativ sein.',
+    'amount_must_be_positive' => 'Der Betrag muss für Einnahmen positiv sein.',
+    'invalid_subtype_for_type' => 'Der ausgewählte Subtyp gehört nicht zum angegebenen Typ.',
 ];

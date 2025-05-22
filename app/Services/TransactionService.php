@@ -21,13 +21,18 @@ class TransactionService implements TransactionServiceInterface
             ->withQueryString();
     }
 
-    public function create(array $data): Transaction
+    public function create(array $data, $isAPI = false): Transaction
     {
+        if ($isAPI) {
+            $data['source'] = 'api';
+        }
+        $data['creator_id'] = auth()->user()?->id;
         return Transaction::create($data);
     }
 
     public function update(Transaction $transaction, array $data): bool
     {
+        $data['creator_id'] = auth()->user()?->id;
         return $transaction->update($data);
     }
 
@@ -39,6 +44,7 @@ class TransactionService implements TransactionServiceInterface
     public function approve(Transaction $transaction, array $data): bool
     {
         $data['is_temp'] = false;
+        $data['creator_id'] = auth()->user()?->id;
         return $transaction->update($data);
     }
 
@@ -60,6 +66,7 @@ class TransactionService implements TransactionServiceInterface
 
             $transaction = $transactions[$txData['id']];
             $transaction->fill($txData);
+            $transaction->creator_id = auth()->user()?->id;
             $transaction->is_temp = false;
             $transaction->save();
             array_push($updatedId, $transaction->id);

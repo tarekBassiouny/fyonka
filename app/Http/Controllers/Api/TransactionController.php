@@ -18,8 +18,7 @@ class TransactionController extends Controller
     public function store(TransactionAPIAddRequest $request): JsonResponse
     {
         try {
-            //TODO Custom validate that subtype belongs to type
-            $transaction = $this->service->create($request->validated());
+            $transaction = $this->service->create($request->validated(), true);
             return response()->json([
                 'status' => 'success',
                 'message' => __('transaction.created'),
