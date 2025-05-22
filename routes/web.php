@@ -18,6 +18,7 @@ use App\Http\Controllers\Web\TransactionController;
 |
 */
 
+Route::get('/ping', fn() => 'pong');
 Route::get('/', [LoginController::class, 'index'])->name('login.index');
 Route::get('/login', [LoginController::class, 'show'])->name('login.show');
 Route::post('/login/authenticate', [LoginController::class, 'authenticate'])->name('login.authenticate');
