@@ -14,15 +14,6 @@ services:
     networks:
       - fyonka-net
 
-  node:
-    image: node:20
-    container_name: node
-    working_dir: /var/www/html
-    volumes:
-      - ./:/var/www/html
-    networks:
-      - fyonka-net
-
   mysql:
     image: mysql:8.0
     container_name: mysql
