@@ -1,0 +1,59 @@
+name: Build & Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+      - name: Build backend (Composer)
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            php:8.2-cli \
+            bash -c "apt update && apt install -y unzip git libzip-dev && docker-php-ext-install zip && curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
+
+      - name: Build frontend (Vite)
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            node:20 \
+            bash -c "npm ci && npm run build"
+
+      - name: Run tests
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            php:8.2-cli \
+            bash -c "vendor/bin/phpunit"
+
+      - name: Deploy to production
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << EOF
+            cd ${{ secrets.DEPLOY_PATH }}
+            export APP_KEY=${{ secrets.APP_KEY }}
+            export APP_URL=${{ secrets.APP_URL }}
+            export DB_DATABASE=${{ secrets.DB_DATABASE }}
+            export DB_USERNAME=${{ secrets.DB_USERNAME }}
+            export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            export DEFAULT_ADMIN_PASSWORD=${{ secrets.DEFAULT_ADMIN_PASSWORD }}
+            export DEFAULT_API_PASSWORD=${{ secrets.DEFAULT_API_PASSWORD }}
+            bash ./setup-env.sh
+            chmod +x deploy.sh
+            bash ./deploy.sh
+          EOF
