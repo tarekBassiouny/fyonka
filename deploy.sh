@@ -14,8 +14,12 @@ docker exec app php artisan cache:clear
 docker exec app php artisan route:clear
 docker exec app php artisan view:clear
 
-docker exec node npm ci
-docker exec node npm run build
+# Step: Build frontend using temporary Node container
+docker run --rm \
+  -v $(pwd):/var/www/html \
+  -w /var/www/html \
+  node:20 \
+  sh -c "npm ci && npm run build"
 
 docker exec app php artisan db:seed --force
 
