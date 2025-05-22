@@ -15,18 +15,21 @@ fi
 # 3. Install PHP dependencies
 docker exec app composer install --no-dev --optimize-autoloader
 
-# 4. Build frontend (Vite)
+# 4. Ensure public/storage link exists
+docker exec app php artisan storage:link
+
+# 5. Build frontend (Vite)
 docker run --rm \
   -v $(pwd):/var/www/html \
   -w /var/www/html \
   node:20 \
   sh -c "npm ci && npm run build"
 
-# 5. Set proper permissions
+# 6. Set proper permissions
 docker exec app chown -R www-data:www-data storage bootstrap/cache
 docker exec app chmod -R 775 storage bootstrap/cache
 
-# 6. Laravel cache + migrate
+# 7. Laravel cache + migrate
 docker exec app php artisan config:clear
 docker exec app php artisan route:clear
 docker exec app php artisan view:clear
@@ -34,7 +37,7 @@ docker exec app php artisan migrate --force
 docker exec app php artisan config:cache
 docker exec app php artisan route:cache
 
-# 7. Seed only if admin not present
+# 8. Seed only if admin not present
 docker exec app php artisan db:seed --force
 
 echo "Deployment complete."

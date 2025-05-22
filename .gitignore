@@ -1,34 +1,35 @@
+# Laravel core
 /vendor/
 node_modules/
-npm-debug.log
-yarn-error.log
 
+# Logs & Cache
+/storage/*.log
+/storage/logs/*
+/bootstrap/cache/*.php
+
+# Build files
 /public/build
 /public/hot
 /public/storage
 
-/storage/*.key
-
+# Environment & credentials
 .env
 .env.backup
 .env.production
+auth.json
 
-Homestead.yaml
-Homestead.json
-
+# System & IDE files
 /.vagrant
 /.fleet
 /.idea
 /.vscode
 
+# Test & coverage
 .phpunit.result.cache
 .phpunit.cache
-auth.json
-
 coverage/
-/bootstrap/cache/*.php
-/storage/logs/*.log
-/storage/*.log
-/storage/logs/*
-/bootstrap/cache/*.php
-.env
+
+# Optional: exclude specific uploads, allow logo
+#/storage/app/public/store_image
+!/storage/app/public/fyonka.svg
+!/storage/app/public/fyonka0.svg
