@@ -28,3 +28,7 @@ auth.json
 coverage/
 /bootstrap/cache/*.php
 /storage/logs/*.log
+/storage/*.log
+/storage/logs/*
+/bootstrap/cache/*.php
+.env
