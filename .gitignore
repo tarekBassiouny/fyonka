@@ -29,7 +29,9 @@ auth.json
 .phpunit.cache
 coverage/
 
-# Optional: exclude specific uploads, allow logo
-#/storage/app/public/store_image
-!/storage/app/public/fyonka.svg
-!/storage/app/public/fyonka0.svg
+# Ignore everything in storage/app/public...
+/storage/app/public/*
+
+# ...except these:
+!/storage/app/public/.gitkeep
+!/storage/app/public/img.svg
