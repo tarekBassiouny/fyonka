@@ -1,14 +1,13 @@
 FROM php:8.2-fpm
 
-# Install system dependencies
+# Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
-    git unzip curl libzip-dev libpng-dev libonig-dev libxml2-dev \
-    zip libcurl4-openssl-dev libssl-dev libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql zip mbstring tokenizer xml gd \
+    git unzip curl zip libzip-dev libpng-dev libjpeg-dev libonig-dev libxml2-dev libpq-dev libssl-dev \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install pdo pdo_mysql zip mbstring xml gd \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
+    
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Set working directory
 WORKDIR /var/www/html
