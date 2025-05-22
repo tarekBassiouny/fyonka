@@ -26,3 +26,5 @@ Homestead.json
 auth.json
 
 coverage/
+/bootstrap/cache/*.php
+/storage/logs/*.log

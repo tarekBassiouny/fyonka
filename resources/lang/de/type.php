@@ -7,4 +7,5 @@ return [
     'error_creating' => 'Fehler beim Erstellen des Typs.',
     'error_updating' => 'Fehler beim Aktualisieren des Typs.',
     'error_deleting' => 'Fehler beim Löschen des Typs.',
+    'invalid_type' => 'Ungültiger Transaktionstyp.',
 ];

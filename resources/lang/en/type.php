@@ -7,4 +7,5 @@ return [
     'error_creating' => 'Failed to create type.',
     'error_updating' => 'Failed to update type.',
     'error_deleting' => 'Failed to delete type.',
+    'invalid_type' => 'Invalid transaction type.',
 ];

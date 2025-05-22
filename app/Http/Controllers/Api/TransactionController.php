@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\TransactionAddRequest;
+use App\Http\Requests\TransactionAPIAddRequest;
 use App\Interfaces\TransactionServiceInterface;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\TransactionAPIResource;
 
 class TransactionController extends Controller
 {
@@ -14,14 +15,22 @@ class TransactionController extends Controller
     {
     }
 
-    public function store(TransactionAddRequest $request): RedirectResponse
+    public function store(TransactionAPIAddRequest $request): JsonResponse
     {
         try {
-            $this->service->create($request->validated());
-            return redirect()->route('transactions.index')->with('success', __('transaction.created'));
+            //TODO Custom validate that subtype belongs to type
+            $transaction = $this->service->create($request->validated());
+            return response()->json([
+                'status' => 'success',
+                'message' => __('transaction.created'),
+                'data' => new TransactionAPIResource($transaction),
+            ], 200);
         } catch (\Exception $e) {
             Log::error($e);
-            return back()->withErrors(['error' => __('transaction.error_creating')])->withInput();
+            return response()->json([
+                'status' => 'error',
+                'message' => __('transaction.error_creating'),
+            ], 500);
         }
     }
 }
