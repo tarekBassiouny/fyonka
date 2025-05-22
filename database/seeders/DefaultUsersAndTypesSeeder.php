@@ -20,7 +20,7 @@ class DefaultUsersAndTypesSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@fyonka.com',
             'password' => Hash::make(env('DEFAULT_ADMIN_PASSWORD', 'password')),
-            'role' => 'admin'
+            'source' => 'dashboard'
         ]);
 
         User::create([
@@ -28,7 +28,7 @@ class DefaultUsersAndTypesSeeder extends Seeder
             'username' => 'api',
             'email' => 'api@fyonka.com',
             'password' => Hash::make(env('DEFAULT_API_PASSWORD', 'password')),
-            'role' => 'api'
+            'source' => 'api'
         ]);
 
         TransactionType::firstOrCreate(['name' => 'income']);
