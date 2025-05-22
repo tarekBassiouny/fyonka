@@ -8,7 +8,7 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 interface TransactionServiceInterface
 {
     public function list(): LengthAwarePaginator;
-    public function create(array $data): Transaction;
+    public function create(array $data, bool $isAPI = false): Transaction;
     public function update(Transaction $transaction, array $data): bool;
     public function delete(Transaction $transaction): ?bool;
 

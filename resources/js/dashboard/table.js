@@ -93,7 +93,7 @@ function renderTable() {
 
             <td class="px-4 py-2 ${!tx.amount ? 'text-black-600' : tx.amount < 0 ? 'text-red-600' : 'text-green-600'}">
                 <div class="flex items-center gap-1">
-                    <span id="error-amount-${id}" class="text-red-500 text-lg hidden">❗</span>
+                    <span id="error-amount-${id}" class="text-sm text-red-600 mt-1 block hidden">❗</span>
                     ${isEditable ? `<input type="number" value="${tx.amount}" class="w-full border rounded px-2 py-1" id="amount-${id}" />` : tx.amount}
                 </div>
             </td>
@@ -224,7 +224,7 @@ function onTypeChange(id) {
     }
 }
 
-function applyErrorStyle(field) {
+function applyErrorStyle(field, message) {
     const fieldId = field.id;
     const icon = document.getElementById(`error-${fieldId}`);
 
@@ -276,7 +276,8 @@ async function approveTransaction(id) {
             method: 'POST',
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
             },
             body: JSON.stringify(payload)
         });
@@ -288,9 +289,29 @@ async function approveTransaction(id) {
             const filters = getFilterParams();
             setupCards(filters);
             setupCharts(filters);
+        } else if (res.status === 422) {
+            const result = await res.json();
+
+            // Loop through each field and show the error
+            Object.entries(result.errors).forEach(([key, messages]) => {
+                // Dynamically get the element by ID
+                const errorElement = document.getElementById(`error-${key}-${id}`);
+
+                if (errorElement) {
+                    errorElement.textContent = messages.join(', ');
+                    errorElement.classList.remove('hidden'); // Optional: make visible if hidden
+                }
+
+                // Optionally style the related input field
+                const inputElement = document.querySelector(`[name="${key}"]`);
+                if (inputElement) {
+                    applyErrorStyle(inputElement); // your custom function
+                }
+            });
         }
+
     } catch (err) {
-        alert('Network error during rejection');
+        alert('Network error during approval');
     }
 }
 
@@ -436,7 +457,8 @@ async function bulkApprove() {
                 method: 'POST',
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                 },
                 body: JSON.stringify({ transactions: rowsToApprove })
             });
@@ -474,7 +496,8 @@ async function bulkReject() {
                 method: 'POST',
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                 },
                 body: JSON.stringify({ ids: tempIds })
             });

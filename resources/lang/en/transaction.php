@@ -34,4 +34,8 @@ return [
     'select_value' => 'Select value',
     'bulk_rejected' => 'Selected transactions have been rejected.',
     'error_bulk_rejected' => 'Failed to reject selected transactions. Please try again.',
+    'amount_must_be_negative' => 'Amount must be negative for outcome transactions.',
+    'amount_must_be_positive' => 'Amount must be positive for income transactions.',
+    'invalid_subtype_for_type' => 'The selected subtype does not belong to the given type.',
+
 ];

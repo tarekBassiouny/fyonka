@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\AmountMatchesType;
+use App\Rules\SubtypeBelongsToType;
 
 class BulkApproveRequest extends FormRequest
 {
@@ -24,12 +26,20 @@ class BulkApproveRequest extends FormRequest
         return [
             'transactions' => 'required|array',
             'transactions.*.id' => 'required|integer|exists:transactions,id',
-            'transactions.*.amount' => 'required|numeric',
+            'transactions.*.amount' => [
+                'required',
+                'numeric',
+                new AmountMatchesType($this->input('type_id')),
+            ],
             'transactions.*.description' => 'nullable|string',
             'transactions.*.date' => 'required|date',
             'transactions.*.store_id' => 'required|exists:stores,id',
             'transactions.*.type_id' => 'required|exists:transaction_types,id',
-            'transactions.*.subtype_id' => 'required|exists:transaction_subtypes,id',
+            'transactions.*.subtype_id' => [
+                'required',
+                'exists:transaction_subtypes,id',
+                new SubtypeBelongsToType($this->input('type_id')),
+            ],
             'transactions.*.is_temp' => 'boolean',
         ];
     }

@@ -15307,3 +15307,423 @@ Did you mean one of these?
 "} 
 [2025-05-21 23:35:15] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
 [2025-05-21 23:36:01] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
+[2025-05-22 19:59:34] local.ERROR: syntax error, unexpected variable "$this" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected variable \"$this\" at /var/www/html/app/Services/TransactionService.php:27)
+[stacktrace]
+#0 /var/www/html/vendor/composer/ClassLoader.php(427): {closure:Composer\\Autoload\\ClassLoader::initializeIncludeClosure():575}()
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(912): ReflectionClass->__construct()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): Illuminate\\Container\\Container->resolve()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(296): Illuminate\\Foundation\\Application->resolve()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(908): Illuminate\\Container\\Container->{closure:Illuminate\\Container\\Container::getClosure():291}()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): Illuminate\\Container\\Container->resolve()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(971): Illuminate\\Container\\Container->make()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(1066): Illuminate\\Foundation\\Application->make()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(982): Illuminate\\Container\\Container->resolveClass()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(943): Illuminate\\Container\\Container->resolveDependencies()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): Illuminate\\Container\\Container->resolve()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(971): Illuminate\\Container\\Container->make()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php(278): Illuminate\\Foundation\\Application->make()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php(1104): Illuminate\\Routing\\Route->getController()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Route.php(1035): Illuminate\\Routing\\Route->controllerMiddleware()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(818): Illuminate\\Routing\\Route->gatherMiddleware()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(800): Illuminate\\Routing\\Router->gatherRouteMiddleware()
+#23 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(748): Illuminate\\Routing\\Router->runRoute()
+#25 /var/www/html/vendor/laravel/framework/src/Illuminate/Routing/Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(200): Illuminate\\Routing\\Router->dispatch()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():142}()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#30 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle()
+#31 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():158}:159}()
+#32 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle()
+#33 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle()
+#34 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():158}:159}()
+#35 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle()
+#36 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():158}:159}()
+#37 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle()
+#38 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():158}:159}()
+#39 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle()
+#40 /var/www/html/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():158}:159}()
+#41 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle()
+#42 /var/www/html/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():158}:159}()
+#43 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then()
+#44 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter()
+#45 /var/www/html/public/index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle()
+#46 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(16): require_once('...')
+#47 {main}
+"} 
+[2025-05-22 21:30:35] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":1000} 
+[2025-05-22 21:30:35] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":3000} 
+[2025-05-22 21:30:35] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":5000} 
+[2025-05-22 21:30:35] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":1000} 
+[2025-05-22 21:30:35] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":2000} 
+[2025-05-22 21:30:35] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":3000} 
+[2025-05-22 21:30:54] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":1000} 
+[2025-05-22 21:30:54] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":3000} 
+[2025-05-22 21:30:54] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":5000} 
+[2025-05-22 21:30:54] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":1000} 
+[2025-05-22 21:30:54] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":2000} 
+[2025-05-22 21:30:54] local.INFO: Excel Invalid rows: {"date":"2025-04-27T06:34:31.625Z","description":"TEST","amount":3000} 
+[2025-05-22 21:31:21] local.ERROR: Transaction import failed: /var/www/html/storage/framework/cache/laravel-excel/laravel-excel-8UKd0asQysIcjh2RgttTNhIO0ldo0ERa is an Invalid Spreadsheet file.  
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":0,"order_account":"DE27850503000221167960","booking_date":"2023-08-25","value_date":"2023-08-28","booking_text":"RECURRING DEBIT","purpose":"DE-INV00022114 ","creditor_id":"GB13ZZZSDDBARC0000007495895876","mandate_reference":"S2NP3GV","customer_reference_end_to_end":"PA047V92NA834Q","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"GC re PAYFIT","account_numberiban":"DE81503104000437760000","bic_swift_code":"BARCDEFF","amount":-58.31,"currency":"EUR","info":"Revenue pending"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":1,"order_account":"DE27850503000221167960","booking_date":"2023-08-25","value_date":"2023-08-28","booking_text":"RECURRING DEBIT","purpose":"DE-INV00021180 ","creditor_id":"GB13ZZZSDDBARC0000007495895876","mandate_reference":"S2NP3GV","customer_reference_end_to_end":"PA047V92KSMSB8","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"GC re PAYFIT","account_numberiban":"DE81503104000437760000","bic_swift_code":"BARCDEFF","amount":-110.67,"currency":"EUR","info":"Revenue pending"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":2,"order_account":"DE27850503000221167960","booking_date":"2023-08-22","value_date":"2023-08-22","booking_text":"ORDER","purpose":"AZ 01-432870/21-AF, Pfändun g vom 09.05.2023, ZlgvDS, Kd. Rosanna Betriebs Gm bH, Pf.Nr. 130246, Tei lzahlung ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"EURONORD Inkasso GmbH & Co.KG","account_numberiban":"DE49240603008535872001","bic_swift_code":"GENODEF1NBU","amount":-5076.41,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":3,"order_account":"DE27850503000221167960","booking_date":"2023-08-22","value_date":"2023-08-22","booking_text":"ORDER","purpose":"Repayment of outstanding loan claims ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Rosanna Betriebs GmbH","account_numberiban":"DE20850503006751764187","bic_swift_code":"OSDDDE81XXX","amount":-2346.03,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":4,"order_account":"DE27850503000221167960","booking_date":"2023-08-22","value_date":"2023-08-22","booking_text":"ORDER","purpose":"Repayment of own claims ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Rosanna Betriebs GmbH","account_numberiban":"DE85850503000221228608","bic_swift_code":"OSDDDE81XXX","amount":-22.37,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":5,"order_account":"DE27850503000221167960","booking_date":"2023-08-15","value_date":"2023-08-15","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: OVH GMBH BETRAG: 62,17 EUR BIC: TUBDDEDD IBAN:DE66300308800012752016 Payment order 194637859 20230815-SN113-00088165170 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"ak70132-ovh, order 194637859","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE66300308800012752016","bic_swift_code":"TUBDDEDD","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":6,"order_account":"DE27850503000221167960","booking_date":"2023-08-10","value_date":"2023-08-10","booking_text":"RECHNUNG","purpose":"Rechnung Löschung Überweisungsauftr. Ablehnungsentgelt 20230810-SN113-00088145552 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":7,"order_account":"DE27850503000221167960","booking_date":"2023-08-08","value_date":"2023-08-08","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: PAYONE GMBH BETRAG: 195,16 EUR BIC: COBADEFF IBAN:DE88500400000600165501 ZAHLUNGSBELEG 0004404518 NR . 9011791173 / 31.07.2023 1 95,16 MWST 31,16 20230808-SN113-00088139514 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"230803-0iv3G0010030051","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE88500400000600165501","bic_swift_code":"COBADEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":8,"order_account":"DE27850503000221167960","booking_date":"2023-08-01","value_date":"2023-08-01","booking_text":"GUTSCHR. UEBERWEISUNG","purpose":"Miete + NK 08/23 GA 8926 ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"GA 8926","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"transact Elektronische Zahlungssysteme GmbH","account_numberiban":"DE53120800004103073500","bic_swift_code":"DRESDEFF120","amount":300.0,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":9,"order_account":"DE27850503000221167960","booking_date":"2023-08-01","value_date":"2023-08-01","booking_text":"RECHNUNG","purpose":"Rechnung Rückrechn Auftragsbelastung über 2.334,71 EUR Verwendungszweck: Rechnung 20230801-SN113-00088120843 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":10,"order_account":"DE27850503000221167960","booking_date":"2023-08-01","value_date":"2023-07-30","booking_text":"GUTSCHRIFT","purpose":"Rechnung Darl.-Leistung 6751764187 Für 01.07.2023 - 30.07.2023 Saldo: 60.544,57- ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"20230731-SN113-00087602684","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Rosanna Betriebs GmbH","account_numberiban":"DE27850503000221167960","bic_swift_code":"OSDDDE81XXX","amount":2334.71,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":11,"order_account":"DE27850503000221167960","booking_date":"2023-08-01","value_date":"2023-08-01","booking_text":"RECHNUNG","purpose":"Rechnung Löschung Überweisungsauftr. Ablehnungsentgelt 20230801-SN113-00087611933 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":12,"order_account":"DE27850503000221167960","booking_date":"2023-07-31","value_date":"2023-08-01","booking_text":"ABSCHLUSS","purpose":"Abrechnung 31.07.2023 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":221167960,"bic_swift_code":85050300,"amount":0.0,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":13,"order_account":"DE27850503000221167960","booking_date":"2023-07-31","value_date":"2023-08-01","booking_text":"ENTGELTABSCHLUSS","purpose":"Entgeltabrechnung siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-47.56,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":14,"order_account":"DE27850503000221167960","booking_date":"2023-07-31","value_date":"2023-07-31","booking_text":"RECHNUNG","purpose":"Rechnung Ostsaechsische Sparkasse Dresden Elko-SRZ-Preis 01.07.2023-31.07.2023 7,74 EUR incl. MwSt. 1,24 EUR USt.-IDNR: Ust-ID: DE 14013 5071 20230731-SN113-00087608963 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-7.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":15,"order_account":"DE27850503000221167960","booking_date":"2023-07-31","value_date":"2023-07-30","booking_text":"EINZUG RATE/ANNUITAET","purpose":"Rechnung Darl.-Leistung 6751764187 Für 01.07.2023 - 30.07.2023 Saldo: 60.544,57- Tilgung 1.023,50 Zinsen 117,49 Verzugszins 7,72 Rückf.Verzug 1.163,68 20230731-SN113-00087602684 UST: 22,32 EUR ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"20230731-SN113-00087602684","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ostsaechsische  Sparkasse  Dresden","account_numberiban":"DE20850503006751764187","bic_swift_code":"OSDDDE81XXX","amount":-2334.71,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":16,"order_account":"DE27850503000221167960","booking_date":"2023-07-28","value_date":"2023-07-28","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: GC re PAYFIT BETRAG: 110,67 EUR BIC: BARCDEFF IBAN:DE81503104000437760000 DE-INV00021180 20230728-SN113-00087568905 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"PA044CHYKV7R9R","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE81503104000437760000","bic_swift_code":"BARCDEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":17,"order_account":"DE27850503000221167960","booking_date":"2023-07-28","value_date":"2023-07-28","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: GC re PAYFIT BETRAG: 58,31 EUR BIC: BARCDEFF IBAN:DE81503104000437760000 DE-INV00022114 20230728-SN113-00087568904 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"PA044CHYNTKZ3J","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE81503104000437760000","bic_swift_code":"BARCDEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":18,"order_account":"DE27850503000221167960","booking_date":"2023-07-19","value_date":"2023-07-19","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: Vodafone GmbH BETRAG: 98,28 EUR BIC: DEUTDEDD IBAN:DE04300700100270704000 0000111273069 0018941948590 Vodafone Rechnung Rechnung snr: 119867772160 KdNr. 111 20230719-SN113-00087529163 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"0000111273069 0018941948590","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE04300700100270704000","bic_swift_code":"DEUTDEDD","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":19,"order_account":"DE27850503000221167960","booking_date":"2023-07-12","value_date":"2023-07-12","booking_text":"RECHNUNG","purpose":"Rechnung Löschung Überweisungsauftr. Ablehnungsentgelt 20230712-SN113-00087502306 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":20,"order_account":"DE27850503000221167960","booking_date":"2023-07-07","value_date":"2023-07-07","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: PAYONE GMBH BETRAG: 195,16 EUR BIC: COBADEFF IBAN:DE88500400000600165501 ZAHLUNGSBELEG 0004352746 NR . 9011736849 / 30.06.2023 1 95,16 MWST 31,16 20230707-SN113-00087494278 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"230704-0ip2G0010030481","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE88500400000600165501","bic_swift_code":"COBADEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":21,"order_account":"DE27850503000221167960","booking_date":"2023-07-06","value_date":"2023-07-06","booking_text":"RECHNUNG","purpose":"Rechnung Löschung Überweisungsauftr. Ablehnungsentgelt 20230706-SN113-00087490624 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":22,"order_account":"DE27850503000221167960","booking_date":"2023-07-05","value_date":"2023-07-05","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: GC re PAYFIT BETRAG: 110,67 EUR BIC: BARCDEFF IBAN:DE81503104000437760000 DE-INV00021180 20230705-SN113-00087488075 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"PA041TD6F5GCX1","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE81503104000437760000","bic_swift_code":"BARCDEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":23,"order_account":"DE27850503000221167960","booking_date":"2023-07-05","value_date":"2023-07-05","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: GC re PAYFIT BETRAG: 58,31 EUR BIC: BARCDEFF IBAN:DE81503104000437760000 DE-INV00022114 20230705-SN113-00087488074 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"PA041TD6FWQ25S","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE81503104000437760000","bic_swift_code":"BARCDEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":24,"order_account":"DE27850503000221167960","booking_date":"2023-07-05","value_date":"2023-07-05","booking_text":"RECHNUNG","purpose":"Rechnung Löschung Überweisungsauftr. Ablehnungsentgelt 20230705-SN113-00087485355 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":25,"order_account":"DE27850503000221167960","booking_date":"2023-07-04","value_date":"2023-07-04","booking_text":"GUTSCHR. UEBERWEISUNG","purpose":"Miete + NK 07/23 GA 8926 ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"GA 8926","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"transact Elektronische Zahlungssysteme GmbH","account_numberiban":"DE53120800004103073500","bic_swift_code":"DRESDEFF120","amount":300.0,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":26,"order_account":"DE27850503000221167960","booking_date":"2023-07-04","value_date":"2023-07-04","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: HDI Global SE BETRAG: 119,00 EUR BIC: PBNKDEFF IBAN:DE73250100300080000309 V-073-010-283-3 / Firmen un d Freie Berufe / 03.06.2023 - 03.06.2 20230704-SN113-00087479001 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":133540108527,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE73250100300080000309","bic_swift_code":"PBNKDEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":27,"order_account":"DE27850503000221167960","booking_date":"2023-06-30","value_date":"2023-07-01","booking_text":"ABSCHLUSS","purpose":"Abrechnung 30.06.2023 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":221167960,"bic_swift_code":85050300,"amount":0.0,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":28,"order_account":"DE27850503000221167960","booking_date":"2023-06-30","value_date":"2023-07-01","booking_text":"ENTGELTABSCHLUSS","purpose":"Entgeltabrechnung siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-47.81,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":29,"order_account":"DE27850503000221167960","booking_date":"2023-06-30","value_date":"2023-06-30","booking_text":"RECHNUNG","purpose":"Rechnung Rückrechn Auftragsbelastung über 1.163,68 EUR Verwendungszweck: Rechnung 20230630-SN113-00086363356 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":30,"order_account":"DE27850503000221167960","booking_date":"2023-06-30","value_date":"2023-06-30","booking_text":"GUTSCHRIFT","purpose":"Rechnung Darl.-Leistung 6751764187 Für 01.06.2023 - 30.06.2023 Saldo: 61.568,07- ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"20230630-SN113-00086361745","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Rosanna Betriebs GmbH","account_numberiban":"DE27850503000221167960","bic_swift_code":"OSDDDE81XXX","amount":1163.68,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":31,"order_account":"DE27850503000221167960","booking_date":"2023-06-30","value_date":"2023-06-30","booking_text":"EINZUG RATE/ANNUITAET","purpose":"Rechnung Darl.-Leistung 6751764187 Für 01.06.2023 - 30.06.2023 Saldo: 61.568,07- Tilgung 1.021,55 Zinsen 119,44 20230630-SN113-00086361745 UST: 22,69 EUR ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"20230630-SN113-00086361745","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ostsaechsische  Sparkasse  Dresden","account_numberiban":"DE20850503006751764187","bic_swift_code":"OSDDDE81XXX","amount":-1163.68,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":32,"order_account":"DE27850503000221167960","booking_date":"2023-06-29","value_date":"2023-06-29","booking_text":"RECHNUNG","purpose":"Rechnung Ostsaechsische Sparkasse Dresden Elko-SRZ-Preis 01.06.2023-30.06.2023 7,74 EUR incl. MwSt. 1,24 EUR USt.-IDNR: Ust-ID: DE 14013 5071 20230629-SN113-00086324439 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":null,"account_numberiban":0,"bic_swift_code":85050300,"amount":-7.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":33,"order_account":"DE27850503000221167960","booking_date":"2023-06-28","value_date":"2023-06-28","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: Allianz Versicherungs-AG BETRAG: 120,49 EUR BIC: BYLADEMMXXX IBAN:DE70700500000004306142 Vertrag AS-9341038985 Gewan dhausstr. 7, 01067 Dresden 17.06.23 - 16.09.23 20230628-SN113-00086293025 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"AB223173-E00006718","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE70700500000004306142","bic_swift_code":"BYLADEMMXXX","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":34,"order_account":"DE27850503000221167960","booking_date":"2023-06-28","value_date":"2023-06-28","booking_text":"ORDER","purpose":"Repayment of own claims ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":null,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Rosanna Betriebs GmbH","account_numberiban":"DE85850503000221228608","bic_swift_code":"OSDDDE81XXX","amount":-12.35,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":35,"order_account":"DE27850503000221167960","booking_date":"2023-06-27","value_date":"2023-06-27","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: INTER Versicherungsgruppe BETRAG: 216,78 EUR BIC: SOLADEST600 IBAN:DE47600501010002047171 S84551936.00.00.-03.06.24.. ..216,78 20230627-SN113-00086289941 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":68004736382,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE47600501010002047171","bic_swift_code":"SOLADEST600","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":36,"order_account":"DE27850503000221167960","booking_date":"2023-06-22","value_date":"2023-06-22","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: Sparkassen-Versicherung Sac hsen Lebensversicherung Akt BETRAG: 35,77 EUR BIC: OSDDDE81XXX IBAN:DE14850503003153150043 Risiko-LV V00700776180 35,7 7 EUR. 20230622-SN113-00086282266 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"050007549660 0435976322","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE14850503003153150043","bic_swift_code":"OSDDDE81XXX","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":37,"order_account":"DE27850503000221167960","booking_date":"2023-06-21","value_date":"2023-06-21","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: Haufe Service Center GmbH BETRAG: 47,36 EUR BIC: COBADEFF IBAN:DE11672400390191115511 5507.7982.4700 Haufe Servic e Center GmbH lx20230600934 78 FBJJ-DSZS lexoffice M 64 20230621-SN113-00086278308 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"31HA07BC81488BE8941F9244452F706D","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE11672400390191115511","bic_swift_code":"COBADEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":38,"order_account":"DE27850503000221167960","booking_date":"2023-06-21","value_date":"2023-06-21","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: 1+1 Telecom GmbH BETRAG: 11,99 EUR BIC: COBADEFF IBAN:DE97500400000589011600 KD-Nr. K775164885/ RG-Nr. 0 00684914883 20230621-SN113-00086278307 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":5359663497,"collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE97500400000589011600","bic_swift_code":"COBADEFF","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:28] local.INFO: Excel Invalid rows: {"0":"in","1":39,"order_account":"DE27850503000221167960","booking_date":"2023-06-16","value_date":"2023-06-16","booking_text":"RECHNUNG","purpose":"Rechnung RÜCKGABE LASTSCHRIFT EINR: Rundfunk ARD, ZDF, DRadio BETRAG: 23,31 EUR BIC: HELADEFF820 IBAN:DE24820500003012345678 Rundfunk bis 06.2023 Beitra gsnr. 706364212 Aenderungen ganz bequem: www.rundfunkb 20230616-SN113-00086268668 siehe Anlage ","creditor_id":null,"mandate_reference":null,"customer_reference_end_to_end":"706364212 2023062000705073","collector_reference":null,"direct_debit_original_amount":null,"auslagenersatz_ruecklastschrift":null,"beneficiarypayer":"Ablehnungsentgelt","account_numberiban":"DE24820500003012345678","bic_swift_code":"HELADEFF820","amount":-2.74,"currency":"EUR","info":"Revenue posted"} 
+[2025-05-22 21:31:46] local.INFO: Excel Invalid rows: {"auftragskonto":"DE27850503000221167960","buchungstag":45138,"valutadatum":45139,"buchungstext":"ABSCHLUSS","verwendungszweck":"Abrechnung 31.07.2023 siehe Anlage ","glaeubiger_id":null,"mandatsreferenz":null,"kundenreferenz_end_to_end":null,"sammlerreferenz":null,"lastschrift_ursprungsbetrag":null,"auslagenersatz_ruecklastschrift":null,"beguenstigterzahlungspflichtiger":null,"kontonummeriban":221167960,"bic_swift_code":85050300,"betrag":0,"waehrung":"EUR","info":"Umsatz gebucht"} 
+[2025-05-22 21:31:46] local.INFO: Excel Invalid rows: {"auftragskonto":"DE27850503000221167960","buchungstag":45107,"valutadatum":45108,"buchungstext":"ABSCHLUSS","verwendungszweck":"Abrechnung 30.06.2023 siehe Anlage ","glaeubiger_id":null,"mandatsreferenz":null,"kundenreferenz_end_to_end":null,"sammlerreferenz":null,"lastschrift_ursprungsbetrag":null,"auslagenersatz_ruecklastschrift":null,"beguenstigterzahlungspflichtiger":null,"kontonummeriban":221167960,"bic_swift_code":85050300,"betrag":0,"waehrung":"EUR","info":"Umsatz gebucht"} 
+[2025-05-22 21:31:47] local.INFO: Excel Invalid rows: {"auftragskonto":"DE27850503000221167960","buchungstag":45077,"valutadatum":45078,"buchungstext":"ABSCHLUSS","verwendungszweck":"Abrechnung 31.05.2023 siehe Anlage ","glaeubiger_id":null,"mandatsreferenz":null,"kundenreferenz_end_to_end":null,"sammlerreferenz":null,"lastschrift_ursprungsbetrag":null,"auslagenersatz_ruecklastschrift":null,"beguenstigterzahlungspflichtiger":null,"kontonummeriban":221167960,"bic_swift_code":85050300,"betrag":0,"waehrung":"EUR","info":"Umsatz gebucht"} 
+[2025-05-22 22:29:51] local.INFO: Excel Invalid rows: {"auftragskonto":"DE27850503000221167960","buchungstag":45138,"valutadatum":45139,"buchungstext":"ABSCHLUSS","verwendungszweck":"Abrechnung 31.07.2023 siehe Anlage ","glaeubiger_id":null,"mandatsreferenz":null,"kundenreferenz_end_to_end":null,"sammlerreferenz":null,"lastschrift_ursprungsbetrag":null,"auslagenersatz_ruecklastschrift":null,"beguenstigterzahlungspflichtiger":null,"kontonummeriban":221167960,"bic_swift_code":85050300,"betrag":0,"waehrung":"EUR","info":"Umsatz gebucht"} 
+[2025-05-22 22:29:51] local.INFO: Excel Invalid rows: {"auftragskonto":"DE27850503000221167960","buchungstag":45107,"valutadatum":45108,"buchungstext":"ABSCHLUSS","verwendungszweck":"Abrechnung 30.06.2023 siehe Anlage ","glaeubiger_id":null,"mandatsreferenz":null,"kundenreferenz_end_to_end":null,"sammlerreferenz":null,"lastschrift_ursprungsbetrag":null,"auslagenersatz_ruecklastschrift":null,"beguenstigterzahlungspflichtiger":null,"kontonummeriban":221167960,"bic_swift_code":85050300,"betrag":0,"waehrung":"EUR","info":"Umsatz gebucht"} 
+[2025-05-22 22:29:51] local.INFO: Excel Invalid rows: {"auftragskonto":"DE27850503000221167960","buchungstag":45077,"valutadatum":45078,"buchungstext":"ABSCHLUSS","verwendungszweck":"Abrechnung 31.05.2023 siehe Anlage ","glaeubiger_id":null,"mandatsreferenz":null,"kundenreferenz_end_to_end":null,"sammlerreferenz":null,"lastschrift_ursprungsbetrag":null,"auslagenersatz_ruecklastschrift":null,"beguenstigterzahlungspflichtiger":null,"kontonummeriban":221167960,"bic_swift_code":85050300,"betrag":0,"waehrung":"EUR","info":"Umsatz gebucht"} 
+[2025-05-22 22:35:03] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'users.users_username_unique' (Connection: mysql, SQL: insert into `users` (`name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) values (Admin User, admin, admin@example.com, 2025-05-22 22:35:02, $2y$12$gg88OA9KbrCFQttHpSy65.2ZPehBZmAGNAryXrSiXBc4ISQnoBtsW, GypAWjy7b3, 2025-05-22 22:35:02, 2025-05-22 22:35:02)) {"exception":"[object] (Illuminate\\Database\\UniqueConstraintViolationException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'users.users_username_unique' (Connection: mysql, SQL: insert into `users` (`name`, `username`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) values (Admin User, admin, admin@example.com, 2025-05-22 22:35:02, $2y$12$gg88OA9KbrCFQttHpSy65.2ZPehBZmAGNAryXrSiXBc4ISQnoBtsW, GypAWjy7b3, 2025-05-22 22:35:02, 2025-05-22 22:35:02)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:824)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(34): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3549): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1982): Illuminate\\Database\\Query\\Builder->insertGetId()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1334): Illuminate\\Database\\Eloquent\\Builder->__call()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1299): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1138): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(338): Illuminate\\Database\\Eloquent\\Model->save()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php(240): Illuminate\\Database\\Eloquent\\Factories\\Factory->{closure:Illuminate\\Database\\Eloquent\\Factories\\Factory::store():333}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(333): Illuminate\\Support\\Collection->each()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(291): Illuminate\\Database\\Eloquent\\Factories\\Factory->store()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(281): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#13 /var/www/html/database/seeders/UserSeeder.php(18): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\UserSeeder->run()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(61): Illuminate\\Database\\Seeder->__invoke()
+#22 /var/www/html/database/seeders/DatabaseSeeder.php(18): Illuminate\\Database\\Seeder->call()
+#23 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#25 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#30 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate\\Database\\Seeder->__invoke()
+#31 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate\\Database\\Console\\Seeds\\SeedCommand->{closure:Illuminate\\Database\\Console\\Seeds\\SeedCommand::handle():69}()
+#32 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#33 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#34 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#35 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#36 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#37 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#38 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#39 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#40 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#41 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(67): Illuminate\\Console\\Command->run()
+#42 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand()
+#43 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(99): Illuminate\\Console\\Command->call()
+#44 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(641): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::handle():83}()
+#45 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(83): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#46 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#47 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#48 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#49 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#50 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#51 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#52 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#53 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#54 /var/www/html/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
+#55 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
+#56 /var/www/html/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
+#57 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#58 /var/www/html/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#59 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'users.users_username_unique' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php:45)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(45): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate\\Database\\MySqlConnection->{closure:Illuminate\\Database\\MySqlConnection::insert():34}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(34): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3549): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1982): Illuminate\\Database\\Query\\Builder->insertGetId()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1334): Illuminate\\Database\\Eloquent\\Builder->__call()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1299): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1138): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(338): Illuminate\\Database\\Eloquent\\Model->save()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Collections/Traits/EnumeratesValues.php(240): Illuminate\\Database\\Eloquent\\Factories\\Factory->{closure:Illuminate\\Database\\Eloquent\\Factories\\Factory::store():333}()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(333): Illuminate\\Support\\Collection->each()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(291): Illuminate\\Database\\Eloquent\\Factories\\Factory->store()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Factories/Factory.php(281): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#15 /var/www/html/database/seeders/UserSeeder.php(18): Illuminate\\Database\\Eloquent\\Factories\\Factory->create()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\UserSeeder->run()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#23 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(61): Illuminate\\Database\\Seeder->__invoke()
+#24 /var/www/html/database/seeders/DatabaseSeeder.php(18): Illuminate\\Database\\Seeder->call()
+#25 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#30 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#31 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#32 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate\\Database\\Seeder->__invoke()
+#33 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate\\Database\\Console\\Seeds\\SeedCommand->{closure:Illuminate\\Database\\Console\\Seeds\\SeedCommand::handle():69}()
+#34 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#35 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#36 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#37 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#38 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#39 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#40 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#41 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#42 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#43 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(67): Illuminate\\Console\\Command->run()
+#44 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand()
+#45 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(99): Illuminate\\Console\\Command->call()
+#46 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(641): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::handle():83}()
+#47 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(83): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#48 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#49 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#50 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#51 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#52 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#53 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#54 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#55 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#56 /var/www/html/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
+#57 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
+#58 /var/www/html/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
+#59 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#60 /var/www/html/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#61 {main}
+"} 
+[2025-05-22 22:35:31] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'income' for key 'transaction_types.transaction_types_name_unique' (Connection: mysql, SQL: insert into `transaction_types` (`name`, `updated_at`, `created_at`) values (income, 2025-05-22 22:35:31, 2025-05-22 22:35:31)) {"exception":"[object] (Illuminate\\Database\\UniqueConstraintViolationException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'income' for key 'transaction_types.transaction_types_name_unique' (Connection: mysql, SQL: insert into `transaction_types` (`name`, `updated_at`, `created_at`) values (income, 2025-05-22 22:35:31, 2025-05-22 22:35:31)) at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:824)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(34): Illuminate\\Database\\Connection->run()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3549): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1982): Illuminate\\Database\\Query\\Builder->insertGetId()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1334): Illuminate\\Database\\Eloquent\\Builder->__call()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1299): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1138): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1025): Illuminate\\Database\\Eloquent\\Model->save()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/helpers.php(320): Illuminate\\Database\\Eloquent\\Builder->{closure:Illuminate\\Database\\Eloquent\\Builder::create():1024}()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1024): tap()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2335): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2347): Illuminate\\Database\\Eloquent\\Model->__call()
+#14 /var/www/html/database/seeders/TransactionTypeSeeder.php(13): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\TransactionTypeSeeder->run()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(61): Illuminate\\Database\\Seeder->__invoke()
+#23 /var/www/html/database/seeders/DatabaseSeeder.php(18): Illuminate\\Database\\Seeder->call()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#25 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#30 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#31 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate\\Database\\Seeder->__invoke()
+#32 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate\\Database\\Console\\Seeds\\SeedCommand->{closure:Illuminate\\Database\\Console\\Seeds\\SeedCommand::handle():69}()
+#33 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#34 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#35 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#36 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#37 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#38 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#39 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#40 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#41 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#42 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(67): Illuminate\\Console\\Command->run()
+#43 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand()
+#44 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(99): Illuminate\\Console\\Command->call()
+#45 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(641): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::handle():83}()
+#46 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(83): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#47 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#48 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#49 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#50 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#51 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#52 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#53 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#54 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#55 /var/www/html/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
+#56 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
+#57 /var/www/html/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
+#58 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#59 /var/www/html/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#60 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'income' for key 'transaction_types.transaction_types_name_unique' at /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php:45)
+[stacktrace]
+#0 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(45): PDOStatement->execute()
+#1 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(816): Illuminate\\Database\\MySqlConnection->{closure:Illuminate\\Database\\MySqlConnection::insert():34}()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(783): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/MySqlConnection.php(34): Illuminate\\Database\\Connection->run()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/MySqlProcessor.php(35): Illuminate\\Database\\MySqlConnection->insert()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3549): Illuminate\\Database\\Query\\Processors\\MySqlProcessor->processInsertGetId()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1982): Illuminate\\Database\\Query\\Builder->insertGetId()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1334): Illuminate\\Database\\Eloquent\\Builder->__call()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1299): Illuminate\\Database\\Eloquent\\Model->insertAndSetId()
+#9 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1138): Illuminate\\Database\\Eloquent\\Model->performInsert()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1025): Illuminate\\Database\\Eloquent\\Model->save()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/helpers.php(320): Illuminate\\Database\\Eloquent\\Builder->{closure:Illuminate\\Database\\Eloquent\\Builder::create():1024}()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1024): tap()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2335): Illuminate\\Database\\Eloquent\\Model->forwardCallTo()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2347): Illuminate\\Database\\Eloquent\\Model->__call()
+#16 /var/www/html/database/seeders/TransactionTypeSeeder.php(13): Illuminate\\Database\\Eloquent\\Model::__callStatic()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\TransactionTypeSeeder->run()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#23 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(61): Illuminate\\Database\\Seeder->__invoke()
+#25 /var/www/html/database/seeders/DatabaseSeeder.php(18): Illuminate\\Database\\Seeder->call()
+#26 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#30 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#31 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#32 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#33 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate\\Database\\Seeder->__invoke()
+#34 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate\\Database\\Console\\Seeds\\SeedCommand->{closure:Illuminate\\Database\\Console\\Seeds\\SeedCommand::handle():69}()
+#35 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#36 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#37 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#38 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#39 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#40 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#41 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#42 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#43 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#44 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(67): Illuminate\\Console\\Command->run()
+#45 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand()
+#46 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(99): Illuminate\\Console\\Command->call()
+#47 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(641): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->{closure:Illuminate\\Database\\Console\\Migrations\\MigrateCommand::handle():83}()
+#48 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(83): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#49 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#50 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#51 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#52 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#53 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#54 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#55 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#56 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#57 /var/www/html/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
+#58 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
+#59 /var/www/html/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
+#60 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#61 /var/www/html/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#62 {main}
+"} 
+[2025-05-22 22:37:26] local.ERROR: syntax error, unexpected single-quoted string "created_at", expecting "]" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected single-quoted string \"created_at\", expecting \"]\" at /var/www/html/database/seeders/UserSeeder.php:38)
+[stacktrace]
+#0 /var/www/html/vendor/composer/ClassLoader.php(427): {closure:Composer\\Autoload\\ClassLoader::initializeIncludeClosure():575}()
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass()
+#2 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(912): ReflectionClass->__construct()
+#3 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(795): Illuminate\\Container\\Container->build()
+#4 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(986): Illuminate\\Container\\Container->resolve()
+#5 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(731): Illuminate\\Foundation\\Application->resolve()
+#6 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(971): Illuminate\\Container\\Container->make()
+#7 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(129): Illuminate\\Foundation\\Application->make()
+#8 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(48): Illuminate\\Database\\Seeder->resolve()
+#9 /var/www/html/database/seeders/DatabaseSeeder.php(18): Illuminate\\Database\\Seeder->call()
+#10 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database\\Seeders\\DatabaseSeeder->run()
+#11 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#12 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#13 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#14 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#15 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(184): Illuminate\\Container\\Container->call()
+#16 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(193): Illuminate\\Database\\Seeder->{closure:Illuminate\\Database\\Seeder::__invoke():183}()
+#17 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate\\Database\\Seeder->__invoke()
+#18 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate\\Database\\Console\\Seeds\\SeedCommand->{closure:Illuminate\\Database\\Console\\Seeds\\SeedCommand::handle():69}()
+#19 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate\\Database\\Eloquent\\Model::unguarded()
+#20 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Seeds\\SeedCommand->handle()
+#21 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#22 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#23 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#24 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#25 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#26 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#27 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#28 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(67): Illuminate\\Console\\Command->run()
+#29 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Concerns/CallsCommands.php(28): Illuminate\\Console\\Command->runCommand()
+#30 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php(93): Illuminate\\Console\\Command->call()
+#31 /var/www/html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php(69): Illuminate\\Database\\Console\\Migrations\\FreshCommand->runSeeder()
+#32 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\FreshCommand->handle()
+#33 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Util.php(41): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#34 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#35 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#36 /var/www/html/vendor/laravel/framework/src/Illuminate/Container/Container.php(662): Illuminate\\Container\\BoundMethod::call()
+#37 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(211): Illuminate\\Container\\Container->call()
+#38 /var/www/html/vendor/symfony/console/Command/Command.php(326): Illuminate\\Console\\Command->execute()
+#39 /var/www/html/vendor/laravel/framework/src/Illuminate/Console/Command.php(180): Symfony\\Component\\Console\\Command\\Command->run()
+#40 /var/www/html/vendor/symfony/console/Application.php(1096): Illuminate\\Console\\Command->run()
+#41 /var/www/html/vendor/symfony/console/Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand()
+#42 /var/www/html/vendor/symfony/console/Application.php(175): Symfony\\Component\\Console\\Application->doRun()
+#43 /var/www/html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(201): Symfony\\Component\\Console\\Application->run()
+#44 /var/www/html/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle()
+#45 {main}
+"} 
+[2025-05-22 22:42:28] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
+[2025-05-22 22:56:37] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
+[2025-05-22 23:00:20] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 

@@ -20,6 +20,7 @@ class Transaction extends Model
         'store_id',
         'subtype_id',
         'is_temp',
+        'creator_id',
         'source',
         'source_detail',
         'ordering_account',

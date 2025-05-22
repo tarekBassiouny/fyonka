@@ -22,6 +22,19 @@ class UserSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'), // use a secure password in prod
             'remember_token' => Str::random(10),
+            'source' => 'dashboard',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        User::factory(1)->create([
+            'name' => 'API User',
+            'username' => 'api',
+            'email' => 'api@example.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'), // use a secure password in prod
+            'remember_token' => Str::random(10),
+            'source' => 'api',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

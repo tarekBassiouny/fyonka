@@ -9,5 +9,8 @@ return [
     'remember_me' => 'Angemeldet bleiben',
     'login_button' => 'Anmelden',
     'logout_button' => 'Abmelden',
+    'dashboard_login_not_allowed' => 'Dieser Benutzer darf sich nicht über das Dashboard anmelden.',
+    'api_login_not_allowed' => 'Dieser Benutzer darf sich nicht über die API anmelden.',
+    'invalid_credentials' => 'Ungültige Zugangsdaten.',
 ];
 
