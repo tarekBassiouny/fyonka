@@ -44,12 +44,12 @@ jobs:
 
       - name: Deploy to production
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << EOF
-            cd ${{ secrets.DEPLOY_PATH }}
+          ssh -o StrictHostKeyChecking=no ${{ vars.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} << EOF
+            cd ${{ vars.DEPLOY_PATH }}
             export APP_KEY=${{ secrets.APP_KEY }}
-            export APP_URL=${{ secrets.APP_URL }}
-            export DB_DATABASE=${{ secrets.DB_DATABASE }}
-            export DB_USERNAME=${{ secrets.DB_USERNAME }}
+            export APP_URL=${{ vars.APP_URL }}
+            export DB_DATABASE=${{ vars.DB_DATABASE }}
+            export DB_USERNAME=${{ vars.DB_USERNAME }}
             export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
             export DEFAULT_ADMIN_PASSWORD=${{ secrets.DEFAULT_ADMIN_PASSWORD }}
             export DEFAULT_API_PASSWORD=${{ secrets.DEFAULT_API_PASSWORD }}
