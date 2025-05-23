@@ -68,6 +68,14 @@ jobs:
           path: vendor
           key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
 
+      - name: Install Composer dependencies
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}:/app \
+            -w /app \
+            php:8.2-cli \
+            bash -c "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
+
       - name: Run tests
         run: |
           docker run --rm \
