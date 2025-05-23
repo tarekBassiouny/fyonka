@@ -72,7 +72,6 @@ jobs:
       - name: Run Laravel Migrations
         run: |
           php artisan key:generate && 
-          php artisan db:show && 
           php artisan migrate --force 
 
       - name: Run Tests
