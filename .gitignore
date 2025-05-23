@@ -6,6 +6,7 @@ node_modules/
 /storage/*.log
 /storage/logs/*
 /bootstrap/cache/*.php
+/storage/logs/laravel.log
 
 # Build files
 /public/build

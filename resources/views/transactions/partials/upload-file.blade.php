@@ -7,7 +7,7 @@
                 <label for="csvFile" class="block text-sm font-medium text-gray-700 mb-1">
                     {{ __('uploads.select_file') }}
                 </label>
-                <input type="file" name="uploadCSV" id="csvFile" accept=".csv,.CSV,.xlsx,.XLSX" required
+                <input type="file" name="uploadCSV" id="csvFile" accept=".csv,.CSV,.xlsx,.XLSX,.xls,.XLS" required
                     class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 

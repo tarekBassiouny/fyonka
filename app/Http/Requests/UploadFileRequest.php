@@ -22,7 +22,7 @@ class UploadFileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'file' => 'required|file|mimes:xlsx,csv',
+            'file' => 'required|file|mimetypes:text/plain,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         ];
     }
 }

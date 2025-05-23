@@ -46,7 +46,7 @@ class HomeController extends Controller
             $uploadedFile = $fileService->storeUploadedFile($request->file('file'));
             Excel::import(
                 new TransactionImport($uploadedFile->id, $request->file('file')->getClientOriginalName()),
-                $request->file('file')
+                storage_path('app/' . $uploadedFile->path)
             );
 
             return response()->json([
