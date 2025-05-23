@@ -24,7 +24,7 @@ jobs:
             -v ${{ github.workspace }}:/app \
             -w /app \
             php:8.2-cli \
-            bash -c "apt update && apt install -y unzip git libzip-dev && docker-php-ext-install zip && curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
+            bash -c "apt update && apt install -y unzip git libzip-dev libpng-dev libjpeg-dev libfreetype6-dev && docker-php-ext-configure gd --with-freetype --with-jpeg && docker-php-ext-install zip gd && curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader"
 
       - name: Build frontend (Vite)
         run: |
