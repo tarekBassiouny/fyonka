@@ -61,9 +61,6 @@ jobs:
       - name: Install Dependencies
         run: composer install --prefer-dist --no-progress --no-interaction
 
-      - name: Install Node Dependencies
-        run: npm install
-
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
 
@@ -72,7 +69,7 @@ jobs:
 
       - name: Create Database Schema
         env:
-          DB_HOST: mysql
+          # DB_HOST: mysql
           DB_DATABASE: testing
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           DB_USERNAME: root
@@ -81,7 +78,7 @@ jobs:
 
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
-          DB_HOST: mysql
+          # DB_HOST: mysql
           DB_DATABASE: testing
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           DB_USERNAME: root
