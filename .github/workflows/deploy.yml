@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -27,9 +30,7 @@ jobs:
           npm run build
 
   test:
-    name: Run Laravel Tests
     runs-on: ubuntu-latest
-    needs: build
     services:
       mysql:
         image: mysql:8.0
@@ -37,45 +38,51 @@ jobs:
           MYSQL_DATABASE: testing
           MYSQL_ROOT_PASSWORD: password
         ports:
-          - 3306:3306
+          - 3306
         options: >-
           --health-cmd="mysqladmin ping"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=5
+          --health-retries=3
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Set up PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.2
+          php-version: "8.2"
           extensions: mbstring, pdo, pdo_mysql
 
-      - name: Copy .env and configure DB
-        run: |
-          cp .env.example .env
-          echo "APP_ENV=testing" >> .env
-          echo "DB_HOST=mysql" >> .env
-          echo "DB_DATABASE=testing" >> .env
-          echo "DB_PORT=3306" >> .env
-          echo "DB_USERNAME=root" >> .env
-          echo "DB_PASSWORD=password" >> .env
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
 
-      - name: Install Composer dev dependencies
-        run: composer install
-      
-      - name: Wait for MySQL to be ready
-        run: sleep 15
+      - name: Install Node Dependencies
+        run: npm install
 
-      - name: Run Laravel Migrations
-        run: |
-          php artisan key:generate && 
-          php artisan migrate --force 
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
 
-      - name: Run Tests
-        run: php artisan test
+      - name: Generate key
+        run: php artisan key:generate
+
+      - name: Create Database Schema
+        env:
+          DB_HOST: mysql
+          DB_DATABASE: testing
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
+          DB_USERNAME: root
+          DB_PASSWORD: password
+        run: php artisan migrate --force
+
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        env:
+          DB_HOST: mysql
+          DB_DATABASE: testing
+          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
+          DB_USERNAME: root
+          DB_PASSWORD: password
+        run: vendor/bin/phpunit
 
   deploy:
     name: Deploy to Production
