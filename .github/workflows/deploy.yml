@@ -59,6 +59,7 @@ jobs:
           echo "APP_ENV=testing" >> .env
           echo "DB_HOST=mysql" >> .env
           echo "DB_DATABASE=testing" >> .env
+          echo "DB_PORT=3306" >> .env
           echo "DB_USERNAME=root" >> .env
           echo "DB_PASSWORD=password" >> .env
 
@@ -66,16 +67,13 @@ jobs:
         run: composer install
       
       - name: Wait for MySQL to be ready
-        run: |
-          for i in {1..30}; do
-            nc -z mysql 3306 && echo "MySQL is up" && exit 0
-            echo "Waiting for MySQL..."
-            sleep 1
-          done
-          echo "MySQL not reachable" && exit 1
+        run: sleep 15
 
       - name: Run Laravel Migrations
-        run: php artisan key:generate && php artisan migrate --force 
+        run: |
+          php artisan key:generate && 
+          php artisan db:show && 
+          php artisan migrate --force 
 
       - name: Run Tests
         run: php artisan test
