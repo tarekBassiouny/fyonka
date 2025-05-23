@@ -14,6 +14,18 @@ export function setupFilters(onChange = () => {}) {
     });
 }
 
+async function apiFetch(url, options = {}) {
+    return fetch(url, {
+        ...options,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            ...(options.headers || {})
+        },
+        credentials: 'include'
+    }).then(res => res.json());
+}
+
 async function loadInitialFilters() {
     try {
         const [typesRes, storesRes] = await Promise.all([
@@ -21,8 +33,8 @@ async function loadInitialFilters() {
             apiFetch('/api/store'),
         ]);
 
-        const types = (await typesRes.json()).data;
-        const stores = (await storesRes.json()).data;
+        const types = (await typesRes).data;
+        const stores = (await storesRes).data;
 
         populateSelect('filterType', types, { valueKey: 'id', labelKey: 'name', includeAll: true });
         populateSelect('filterStore', stores, { valueKey: 'id', labelKey: 'name', includeAll: true });
@@ -43,7 +55,7 @@ async function handleTypeChange() {
 
     try {
         const res = await apiFetch(`/api/type/${typeId}/subtype`);
-        const subtypes = (await res.json()).data;
+        const subtypes = (await res).data;
         populateSelect('filterSubtype', subtypes, {
             valueKey: 'id',
             labelKey: 'name',
@@ -75,12 +87,12 @@ function populateSelect(id, items, { valueKey, labelKey, includeAll = false }) {
     });
 }
 
-function apiFetch(url) {
-    return fetch(url, {
-        headers: { 'Accept': 'application/json' },
-        credentials: 'same-origin',
-    });
-}
+// function apiFetch(url) {
+//     return fetch(url, {
+//         headers: { 'Accept': 'application/json' },
+//         credentials: 'same-origin',
+//     });
+// }
 
 export function getFilterParams() {
     return {

@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    initSanctum()
+    
     // ✅ Make them globally accessible
     window.showConfirmation = showConfirmation;
     window.cancelConfirmation = cancelConfirmation;
@@ -42,3 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.setupCharts = setupCharts;
 });
 
+// call this once at app boot
+async function initSanctum() {
+    await fetch('/sanctum/csrf-cookie', {
+        credentials: 'include'
+    });
+}

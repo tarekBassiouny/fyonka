@@ -35,8 +35,15 @@ async function loadTransactions(filters = {}) {
         per_page: perPage
     }).toString();
 
-    // try {
-    const res = await fetch(`/transactions/data?${query}`);
+    const res = await fetch(`/transactions/data?${query}`, {
+        method: 'GET',
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        credentials: 'include'
+    });
     const data = await res.json();
 
     allTransactions = data.data;
@@ -46,9 +53,6 @@ async function loadTransactions(filters = {}) {
     await fetchDropdowns();
     renderTable();
     renderPagination(data.meta);
-    // } catch {
-    //     alert('Failed to load transactions.');
-    // }
 }
 
 async function fetchDropdowns() {
