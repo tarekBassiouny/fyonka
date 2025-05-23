@@ -75,7 +75,7 @@ jobs:
             && docker-php-ext-install zip gd \
             && curl -sS https://getcomposer.org/installer | php \
             && php composer.phar install \
-            && php ./vendor/bin/phpunit"
+            && php vendor/bin/phpunit"
 
   deploy:
     name: Deploy to Production

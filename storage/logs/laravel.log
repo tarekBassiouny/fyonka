@@ -15727,3 +15727,5 @@ Did you mean one of these?
 [2025-05-22 22:42:28] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
 [2025-05-22 22:56:37] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
 [2025-05-22 23:00:20] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
+[2025-05-23 03:12:05] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 
+[2025-05-23 03:12:42] testing.INFO: Excel Invalid rows: {"not_a_valid_header":"something","wrong_column":"else"} 

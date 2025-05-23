@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\cards;
+namespace Tests\Feature\Cards;
 
 use App\Interfaces\DashboardServiceInterface;
 use Tests\TestCase;
