@@ -67,23 +67,13 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
-      - name: Create Database Schema
-        env:
-          # DB_HOST: mysql
-          DB_DATABASE: testing
-          DB_PORT: ${{ job.services.mysql.ports['3306'] }}
-          DB_USERNAME: root
-          DB_PASSWORD: password
-        run: php artisan migrate --force
-
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
-          # DB_HOST: mysql
           DB_DATABASE: testing
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           DB_USERNAME: root
           DB_PASSWORD: password
-        run: vendor/bin/phpunit
+        run: php vendor/bin/phpunit
 
   deploy:
     name: Deploy to Production
