@@ -9,32 +9,11 @@ jobs:
   build:
     name: Build Backend & Frontend
     runs-on: ubuntu-latest
-    outputs:
-      composer-cache: ${{ steps.composer-cache.outputs.cache-hit }}
-      node-cache: ${{ steps.node-cache.outputs.cache-hit }}
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v3
 
-      - name: Cache Composer dependencies
-        id: composer-cache
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-composer-
-
-      - name: Cache NPM dependencies
-        id: node-cache
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install and Run PHPUnit
+      - name: Install Composer dependencies
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/app \
@@ -44,8 +23,7 @@ jobs:
             && docker-php-ext-configure gd --with-freetype --with-jpeg \
             && docker-php-ext-install zip gd \
             && curl -sS https://getcomposer.org/installer | php \
-            && php composer.phar install --no-dev --optimize-autoloader \
-            && php vendor/bin/phpunit"
+            && php composer.phar install --no-dev --optimize-autoloader"
 
       - name: Install & Build Frontend
         run: |
@@ -63,13 +41,7 @@ jobs:
       - name: Checkout latest code
         uses: actions/checkout@v3
 
-      - name: Restore Composer dependencies
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
-
-      - name: Install Composer dependencies
+      - name: Install and Run PHPUnit
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/app \
@@ -79,15 +51,8 @@ jobs:
             && docker-php-ext-configure gd --with-freetype --with-jpeg \
             && docker-php-ext-install zip gd \
             && curl -sS https://getcomposer.org/installer | php \
-            && php composer.phar install --no-dev --optimize-autoloader"
-
-      - name: Run tests
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/app \
-            -w /app \
-            php:8.2-cli \
-            php vendor/bin/phpunit
+            && php composer.phar install --no-dev --optimize-autoloader \
+            && php vendor/bin/phpunit"
 
   deploy:
     name: Deploy to Production
