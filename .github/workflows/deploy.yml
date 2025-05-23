@@ -72,7 +72,7 @@ jobs:
             php:8.2-cli \
             bash -c "apt update && apt install -y unzip git libzip-dev libpng-dev libjpeg-dev libfreetype6-dev \
             && docker-php-ext-configure gd --with-freetype --with-jpeg \
-            && docker-php-ext-install zip gd \
+            && docker-php-ext-install zip gd pdo_mysql \
             && curl -sS https://getcomposer.org/installer | php \
             && php composer.phar install \
             && php vendor/bin/phpunit"
