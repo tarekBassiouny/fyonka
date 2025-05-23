@@ -73,7 +73,7 @@ jobs:
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           DB_USERNAME: root
           DB_PASSWORD: password
-        run: php vendor/bin/phpunit
+        run: php artisan test
 
   deploy:
     name: Deploy to Production
