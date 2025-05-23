@@ -64,6 +64,15 @@ jobs:
 
       - name: Install Composer dev dependencies
         run: composer install
+      
+      - name: Wait for MySQL to be ready
+        run: |
+          for i in {1..30}; do
+            nc -z mysql 3306 && echo "MySQL is up" && exit 0
+            echo "Waiting for MySQL..."
+            sleep 1
+          done
+          echo "MySQL not reachable" && exit 1
 
       - name: Run Laravel Migrations
         run: php artisan migrate --force
