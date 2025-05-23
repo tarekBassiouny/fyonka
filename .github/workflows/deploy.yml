@@ -64,18 +64,17 @@ jobs:
           echo "DB_USERNAME=root" >> .env
           echo "DB_PASSWORD=root" >> .env
 
-      - name: Install and Run PHPUnit
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}:/app \
-            -w /app \
-            php:8.2-cli \
-            bash -c "apt update && apt install -y unzip git libzip-dev libpng-dev libjpeg-dev libfreetype6-dev \
-            && docker-php-ext-configure gd --with-freetype --with-jpeg \
-            && docker-php-ext-install zip gd pdo_mysql \
-            && curl -sS https://getcomposer.org/installer | php \
-            && php composer.phar install \
-            && php vendor/bin/phpunit"
+      - name: Set up PHP with extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo, pdo_mysql
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
 
   deploy:
     name: Deploy to Production
