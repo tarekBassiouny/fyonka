@@ -52,7 +52,7 @@ jobs:
             && docker-php-ext-install zip gd \
             && curl -sS https://getcomposer.org/installer | php \
             && php composer.phar install --no-dev --optimize-autoloader \
-            && php vendor/bin/phpunit"
+            && php artisan test"
 
   deploy:
     name: Deploy to Production
