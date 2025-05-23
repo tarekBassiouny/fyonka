@@ -74,7 +74,7 @@ jobs:
             && docker-php-ext-configure gd --with-freetype --with-jpeg \
             && docker-php-ext-install zip gd \
             && curl -sS https://getcomposer.org/installer | php \
-            && php composer.phar install --no-dev --optimize-autoloader \
+            && php composer.phar install \
             && php ./vendor/bin/phpunit"
 
   deploy:
