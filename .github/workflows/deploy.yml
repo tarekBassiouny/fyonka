@@ -34,7 +34,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install Composer dependencies
+      - name: Install and Run PHPUnit
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/app \
@@ -44,7 +44,8 @@ jobs:
             && docker-php-ext-configure gd --with-freetype --with-jpeg \
             && docker-php-ext-install zip gd \
             && curl -sS https://getcomposer.org/installer | php \
-            && php composer.phar install --no-dev --optimize-autoloader"
+            && php composer.phar install --no-dev --optimize-autoloader \
+            && php vendor/bin/phpunit"
 
       - name: Install & Build Frontend
         run: |
