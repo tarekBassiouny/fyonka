@@ -35,7 +35,7 @@ jobs:
         image: mysql:8.0
         env:
           MYSQL_DATABASE: testing
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: password
         ports:
           - 3306:3306
         options: >-
@@ -59,7 +59,7 @@ jobs:
           echo "APP_ENV=testing" >> .env
           echo "DB_HOST=mysql" >> .env
           echo "DB_DATABASE=testing" >> .env
-          echo "DB_USERNAME=test" >> .env
+          echo "DB_USERNAME=root" >> .env
           echo "DB_PASSWORD=password" >> .env
 
       - name: Install Composer dev dependencies
@@ -75,7 +75,7 @@ jobs:
           echo "MySQL not reachable" && exit 1
 
       - name: Run Laravel Migrations
-        run: php artisan migrate --force
+        run: php artisan key:generate && php artisan migrate --force 
 
       - name: Run Tests
         run: php artisan test
