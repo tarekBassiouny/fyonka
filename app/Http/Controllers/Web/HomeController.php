@@ -78,6 +78,6 @@ class HomeController extends Controller
         $pdf = $this->dashboardService->renderPDF($filters, $store);
         $storeName = $store?->name ?? __('generic.all_stores');
         
-        return $pdf->stream($storeName . '-' . __('generic.financial-report') . '-' . now()->format('Y-m-d') . '.pdf');
+        return $pdf->download($storeName . '-' . __('generic.financial-report') . '-' . now()->format('Y-m-d') . '.pdf');
     }
 }
