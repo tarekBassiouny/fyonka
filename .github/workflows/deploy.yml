@@ -69,6 +69,7 @@ jobs:
 
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
+          APP_ENV: testing
           DB_DATABASE: testing
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           DB_USERNAME: root
