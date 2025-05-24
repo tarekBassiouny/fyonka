@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\AmountMatchesType;
-use App\Rules\SubtypeBelongsToType;
+use App\Models\TransactionSubtype;
 
 class BulkApproveRequest extends FormRequest
 {
@@ -38,7 +38,16 @@ class BulkApproveRequest extends FormRequest
             'transactions.*.subtype_id' => [
                 'required',
                 'exists:transaction_subtypes,id',
-                new SubtypeBelongsToType($this->input('type_id')),
+                function ($attribute, $value, $fail) {
+                    $index = explode('.', $attribute)[1];
+                    $typeId = $this->input("transactions.$index.type_id");
+
+                    if (!TransactionSubtype::where('id', $value)
+                        ->where('transaction_type_id', $typeId)
+                        ->exists()) {
+                        $fail(__('transaction.invalid_subtype_for_type'));
+                    }
+                },
             ],
             'transactions.*.is_temp' => 'boolean',
         ];

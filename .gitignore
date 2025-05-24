@@ -36,3 +36,9 @@ coverage/
 # ...except these:
 !/storage/app/public/.gitkeep
 !/storage/app/public/img.svg
+
+.DS_Store
+storage/logs/laravel.log
+bootstrap/cache/packages.php
+bootstrap/cache/routes-v7.php
+bootstrap/cache/services.php

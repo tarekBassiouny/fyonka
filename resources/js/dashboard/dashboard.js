@@ -44,9 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.setupCharts = setupCharts;
 });
 
-// call this once at app boot
 async function initSanctum() {
     await fetch('/sanctum/csrf-cookie', {
         credentials: 'include'
     });
 }
+
+document.getElementById('generatePDF')?.addEventListener('click', () => {
+    const filters = getFilterParams();
+    const query = new URLSearchParams(filters).toString();
+    window.open(`/report/pdf?${query}`, '_blank');
+});

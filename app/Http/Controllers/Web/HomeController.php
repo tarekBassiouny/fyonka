@@ -13,6 +13,7 @@ use App\Http\Resources\TransactionResource;
 use App\Http\Resources\CardResource;
 use App\Http\Resources\ChartResource;
 use App\Http\Controllers\Controller;
+use App\Models\Store;
 
 class HomeController extends Controller
 {
@@ -66,7 +67,17 @@ class HomeController extends Controller
     {
         $page = $request->input('per_page', 10);
         $transactions = $this->dashboardService->paginateTransactions($request->validatedFilters(), $page);
-        
+
         return TransactionResource::collection($transactions);
+    }
+
+    public function generatePdfReport(DashboardFilterRequest $request)
+    {
+        $filters = $request->validatedFilters();
+        $store = isset($filters['store_id']) ? Store::find($filters['store_id']) : null;
+        $pdf = $this->dashboardService->renderPDF($filters, $store);
+        $storeName = $store?->name ?? __('generic.all_stores');
+        
+        return $pdf->stream($storeName . '-' . __('generic.financial-report') . '-' . now()->format('Y-m-d') . '.pdf');
     }
 }
