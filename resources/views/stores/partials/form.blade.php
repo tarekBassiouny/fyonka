@@ -23,7 +23,7 @@
                 <label for="storeImage" class="block text-sm font-medium text-gray-700">
                     {{ __('store.store_image') }}
                 </label>
-                <input type="file" id="storeImage" name="image" accept="image/*"
+                <input type="file" id="storeImage" name="image" accept="image/png,image/jpeg,image/webp"
                     class="w-full border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2">
             </div>
 

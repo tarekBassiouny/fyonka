@@ -55,22 +55,24 @@
         <tr>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.total_income') }}</div>
-                <div style="font-size: 20px; font-weight: 600;">{{ number_format($summary['revenue']['value'], 2) }}
+                <div style="font-size: 20px; font-weight: 600;">
+                    {{ number_format($summary['revenue']['value'], 2) }}
                 </div>
             </td>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.gross_profit') }}</div>
-                <div style="font-size: 20px; font-weight: 600; color: green;">
-                    +{{ number_format($summary['gross_profit']['value'], 2) }}</div>
+                <div style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
+                    {{ number_format($summary['gross_profit']['value'], 2) }}</div>
             </td>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.net_margin') }}</div>
-                <div style="font-size: 20px; font-weight: 600; color: green;">{{ $summary['net_margin']['value'] }}%
+                <div style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
+                    {{ $summary['net_margin']['value'] }}%
                 </div>
             </td>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.expenses') }}</div>
-                <div style="font-size: 20px; font-weight: 600; color: red;">
+                <div style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
                     {{ number_format($summary['expenses']['value'], 2) }}</div>
             </td>
         </tr>
