@@ -6,6 +6,11 @@ use App\Models\Transaction;
 use App\Enums\TransactionTypeEnum;
 use App\Interfaces\DashboardServiceInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Collection;
+use Barryvdh\DomPDF\PDF as pdfView;
+use App\Models\Store;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 class DashboardService implements DashboardServiceInterface
 {
@@ -106,11 +111,57 @@ class DashboardService implements DashboardServiceInterface
     {
         $query = $this->applyFilters(
             Transaction::with(['store', 'transactionType', 'subtype'])
-            ->orderBy('is_temp', 'desc')
-            ->orderBy('id', 'desc'),
+                ->orderBy('is_temp', 'desc')
+                ->orderBy('id', 'desc'),
             $filters
         );
         return $query->paginate($perPage);
+    }
+
+    public function transactionList(array $filters): Collection
+    {
+        $query = $this->applyFilters(
+            Transaction::with(['store', 'transactionType', 'subtype'])
+                ->where('is_temp', false)
+                ->orderBy('is_temp', 'desc')
+                ->orderBy('id', 'desc'),
+            $filters
+        );
+
+        return $query->get();
+    }
+
+    public function renderPDF(array $filters, ?Store $store): pdfView
+    {
+        $summary = $this->getCardSummary($filters);
+        $transactions = $this->transactionList($filters, false);
+
+        $storeName = $store?->name ?? __('generic.all_stores');
+        $path = $store?->image_path ?? 'store_image/default_logo.png';
+
+        // Resolve absolute image path
+        $absoluteImagePath = public_path('storage/' . $path);
+        if (!file_exists($absoluteImagePath)) {
+            $absoluteImagePath = public_path('images/default-logo.png');
+        }
+        $storeImage = 'file://' . $absoluteImagePath;
+
+        $dateFrom = $filters['date_from'] ?? null
+            ? Carbon::parse($filters['date_from'])->format('m-d-Y')
+            : 'N/A';
+
+        $dateTo = $filters['date_to'] ?? null
+            ? Carbon::parse($filters['date_to'])->format('m-d-Y')
+            : now()->format('m-d-Y');
+
+        return Pdf::loadView('pdf.report', compact(
+            'summary',
+            'transactions',
+            'storeName',
+            'storeImage',
+            'dateFrom',
+            'dateTo',
+        ));
     }
 
     private function applyFilters($query, array $filters)

@@ -36,3 +36,5 @@ coverage/
 # ...except these:
 !/storage/app/public/.gitkeep
 !/storage/app/public/img.svg
+
+.DS_Store

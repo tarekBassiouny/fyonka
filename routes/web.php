@@ -37,6 +37,8 @@ Route::middleware('auth')->prefix('/')->group(function () {
     Route::get('/cards', [HomeController::class, 'cards'])->name('dashboard.cards');
     Route::get('/charts', [HomeController::class, 'charts'])->name('dashboard.charts');
     Route::get('/transactions/data', [HomeController::class, 'transactions'])->name('dashboard.transactions');
+    Route::get('/report/pdf', [HomeController::class, 'generatePdfReport'])->name('dashboard.report.pdf');
+
 
     Route::post('/import', [HomeController::class, 'uploadTransactions'])->name('transactions.import');
     Route::resource('stores', StoreController::class)->except(['show', 'create', 'edit']);

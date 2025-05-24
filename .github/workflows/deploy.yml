@@ -3,10 +3,10 @@ name: Build, Test and Deploy
 on:
   push:
     branches:
-      - main
+      - "**" # Match any branch
   pull_request:
     branches:
-      - main
+      - main # PRs targeting main
 
 jobs:
   build:
@@ -69,6 +69,7 @@ jobs:
 
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         env:
+          APP_ENV: testing
           DB_DATABASE: testing
           DB_PORT: ${{ job.services.mysql.ports['3306'] }}
           DB_USERNAME: root

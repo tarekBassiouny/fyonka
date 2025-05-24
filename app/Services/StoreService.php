@@ -28,7 +28,7 @@ class StoreService implements StoreServiceInterface
     public function create(array $data, UploadedFile $file): Store
     {
         if ($file) {
-            $data['image_path'] = $file->store('store_image/' . $data['name'], 'public');
+            $data['image_path'] = $file->store('store_image', 'public');
         }
 
         return Store::create($data);

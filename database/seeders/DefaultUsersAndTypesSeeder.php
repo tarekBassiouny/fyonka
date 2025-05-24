@@ -31,6 +31,15 @@ class DefaultUsersAndTypesSeeder extends Seeder
             ]);
         }
 
+        if (!User::where('username', 'dev')->exists()) {
+            User::create([
+                'name' => 'Dev User',
+                'username' => 'dev',
+                'email' => 'dev@fyonka.com',
+                'password' => Hash::make(env('DEFAULT_ADMIN_PASSWORD', 'password')),
+                'source' => 'dashboard'
+            ]);
+        }
 
         if (!TransactionType::where('name', 'income')->exists()) {
             TransactionType::firstOrCreate(['name' => 'income']);
