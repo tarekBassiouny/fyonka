@@ -3,10 +3,10 @@ name: Build, Test and Deploy
 on:
   push:
     branches:
-      - main
+      - "**" # Match any branch
   pull_request:
     branches:
-      - main
+      - main # PRs targeting main
 
 jobs:
   build:
