@@ -16,6 +16,7 @@
         <x-dashboard.charts />
     </div>
 
+    <!-- === Action Buttons Section === -->
     <div class="mt-6">
         <x-dashboard.action-buttons />
     </div>
