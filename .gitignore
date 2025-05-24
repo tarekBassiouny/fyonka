@@ -38,4 +38,3 @@ coverage/
 !/storage/app/public/img.svg
 
 .DS_Store
-storage/logs/laravel.log
