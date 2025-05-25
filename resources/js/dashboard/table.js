@@ -6,7 +6,8 @@ let allTransactions = [];
 let types = [];
 let subtypes = [];
 let stores = [];
-const tomSelectInstances = new Map();
+
+const choicesInstances = new Map();
 
 export function setupTransactions(filters = {}) {
     loadTransactions(filters);
@@ -166,10 +167,17 @@ function renderTable() {
 
         // Apply Tom Select to editable rows
         if (isEditable) {
-            tomSelectInstances.set(`type-${id}`, new TomSelect(`#type-${id}`, { create: false }));
-            tomSelectInstances.set(`subtype-${id}`, new TomSelect(`#subtype-${id}`, { create: false }));
-            tomSelectInstances.set(`store-${id}`, new TomSelect(`#store-${id}`, { create: false }));
-
+            ['type', 'subtype', 'store'].forEach(key => {
+                const el = document.getElementById(`${key}-${id}`);
+                if (el) {
+                    const instance = new Choices(el, {
+                        searchEnabled: true,
+                        shouldSort: false,
+                        itemSelectText: ''
+                    });
+                    choicesInstances.set(`${key}-${id}`, instance);
+                }
+            });
         }
     });
 }
@@ -215,16 +223,16 @@ function onTypeChange(id) {
         ${filtered.map(s => `<option value="${s.id}">${s.name}</option>`).join('')}
     `;
 
-    // Reset the value
-    subtypeSelect.value = '';
-
-    // Refresh Tom Select instance if it exists
-    const ts = tomSelectInstances.get(`subtype-${id}`);
-    if (ts) {
-        ts.clear(true); // clear selected option
-        ts.clearOptions();
-        ts.addOptions(filtered.map(s => ({ value: s.id, text: s.name })));
-        ts.refreshOptions(false);
+    // Get existing instance and clear it
+    const instance = choicesInstances.get(`subtype-${id}`);
+    if (instance) {
+        instance.clearStore();
+        instance.setChoices(
+            filtered.map(s => ({ value:  s.id, label: s.name })),
+            'value',
+            'label',
+            true
+        );
     }
 }
 

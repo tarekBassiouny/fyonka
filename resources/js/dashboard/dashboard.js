@@ -3,6 +3,8 @@ import { setupCards } from './cards.js';
 import { setupCharts } from './charts.js';
 import { setupUpload } from './upload.js';
 import { setupTransactions } from './table.js';
+import Choices from 'choices.js';
+import 'choices.js/public/assets/styles/choices.min.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     setupFilters(() => {
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.cancelConfirmation = cancelConfirmation;
     window.setupCards = setupCards;
     window.setupCharts = setupCharts;
+    window.Choices = Choices;
 });
 
 async function initSanctum() {

@@ -16,6 +16,7 @@
     "dependencies": {
         "alpinejs": "^3.14.9",
         "chart.js": "^4.4.9",
+        "choices.js": "^11.1.0",
         "tom-select": "^2.4.3"
     }
 }
