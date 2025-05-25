@@ -14,7 +14,7 @@
 .choices__inner {
   @apply w-full border border-gray-300 rounded px-2 py-1 text-sm bg-white;
   box-shadow: none !important;   
-}   
+}
 
 .choices__inner {
   @apply w-full border border-gray-300 border-[1px] rounded px-2 py-0.5 text-sm h-7 flex items-center;
