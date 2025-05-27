@@ -28,10 +28,10 @@
                         class="{{ nav_class('dashboard.index') }}">{{ __('nav.dashboard') }}</a></li>
                 <li><a href="{{ route('stores.index') }}" class="{{ nav_class('stores.*') }}">{{ __('nav.stores') }}</a>
                 </li>
-                {{-- <li><a href="{{ route('types.index') }}"
-                        class="{{ nav_class('types.*') }}">{{ __('nav.transaction_type') }}</a></li> --}}
                 <li><a href="{{ route('subtypes.index') }}"
                         class="{{ nav_class('subtypes.*') }}">{{ __('nav.transaction_subtype') }}</a></li>
+                <li><a href="{{ route('convert.index') }}"
+                        class="{{ nav_class('convert.*') }}">{{ __('nav.convert') }}</a></li>
             </ul>
         </div>
 
