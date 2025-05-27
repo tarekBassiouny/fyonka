@@ -30,6 +30,8 @@
                 </li>
                 <li><a href="{{ route('subtypes.index') }}"
                         class="{{ nav_class('subtypes.*') }}">{{ __('nav.transaction_subtype') }}</a></li>
+                <li><a href="{{ route('users.index') }}"
+                        class="{{ nav_class('users.*') }}">{{ __('nav.users') }}</a></li>
                 <li><a href="{{ route('convert.index') }}"
                         class="{{ nav_class('convert.*') }}">{{ __('nav.convert') }}</a></li>
             </ul>

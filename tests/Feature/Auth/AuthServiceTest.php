@@ -24,12 +24,12 @@ class AuthServiceTest extends TestCase
         $this->webUser = User::factory()->create([
             'username' => 'admin',
             'password' => bcrypt('password'),
-            'source' => 'dashboard'
+            'role' => 'dashboard'
         ]);
         $this->apiUser = User::factory()->create([
             'username' => 'api',
             'password' => bcrypt('password'),
-            'source' => 'api'
+            'role' => 'api'
         ]);
     }
 

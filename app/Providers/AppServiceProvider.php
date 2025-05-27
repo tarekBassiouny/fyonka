@@ -11,6 +11,7 @@ use App\Interfaces\TransactionServiceInterface;
 use App\Interfaces\TransactionSubtypeServiceInterface;
 use App\Interfaces\TransactionTypeServiceInterface;
 use App\Interfaces\UploadedFileServiceInterface;
+use App\Interfaces\UserServiceInterface;
 use App\Services\AuthService;
 use App\Services\DashboardService;
 use App\Services\FileConverterService;
@@ -19,6 +20,7 @@ use App\Services\TransactionService;
 use App\Services\TransactionSubtypeService;
 use App\Services\TransactionTypeService;
 use App\Services\UploadedFileService;
+use App\Services\UserService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(TransactionSubtypeServiceInterface::class, TransactionSubtypeService::class);
         $this->app->bind(TransactionTypeServiceInterface::class, TransactionTypeService::class);
         $this->app->bind(UploadedFileServiceInterface::class, UploadedFileService::class);
+        $this->app->bind(UserServiceInterface::class, UserService::class);
     }
 
     /**
