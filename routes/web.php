@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\StoreController;
 use App\Http\Controllers\Web\TransactionSubtypeController;
 use App\Http\Controllers\Web\TransactionController;
+use App\Http\Controllers\Web\FileConverterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +52,7 @@ Route::middleware('auth')->prefix('/')->group(function () {
     Route::delete('/transactions/{transaction}/reject', [TransactionController::class, 'reject'])->name('transactions.reject');
 
     Route::get('/subtypes/by-type/{type}', [TransactionSubtypeController::class, 'byType'])->name('subtypes.byType');
+
+    Route::get('/convert', [FileConverterController::class, 'index'])->name('convert.index');
+    Route::post('/convert/excel', [FileConverterController::class, 'convert'])->name('convert.excel');
 });
