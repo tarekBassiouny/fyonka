@@ -16,7 +16,7 @@ class AuthService implements AuthServiceInterface
             return false;
         }
 
-        if (Auth::user()?->source === 'api') {
+        if (Auth::user()?->role === 'api') {
             Auth::logout();
             throw ValidationException::withMessages([
                 'error' => __('auth.dashboard_login_not_allowed'),
@@ -36,7 +36,7 @@ class AuthService implements AuthServiceInterface
 
         $user = Auth::user();
 
-        if ($user->source === 'dashboard') {
+        if ($user->role === 'dashboard') {
             Auth::logout();
             throw ValidationException::withMessages([
                 'error' => [__('auth.api_login_not_allowed')],

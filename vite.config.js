@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/js/dashboard/dashboard.js',
                 'resources/js/stores.js',
                 'resources/js/subtypes.js',
+                'resources/js/users.js',
             ],
             refresh: true,
         }),

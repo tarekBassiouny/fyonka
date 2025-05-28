@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\StoreController;
 use App\Http\Controllers\Web\TransactionSubtypeController;
 use App\Http\Controllers\Web\TransactionController;
 use App\Http\Controllers\Web\FileConverterController;
+use App\Http\Controllers\Web\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::middleware('auth')->prefix('/')->group(function () {
     Route::post('/import', [HomeController::class, 'uploadTransactions'])->name('transactions.import');
     Route::resource('stores', StoreController::class)->except(['show', 'create', 'edit']);
     Route::resource('subtypes', TransactionSubtypeController::class)->except(['show', 'create', 'edit']);
+    Route::resource('users', UserController::class)->except(['show', 'create', 'edit']);
 
     Route::resource('transactions', TransactionController::class)->except(['show']);
     Route::post('/transactions/bulk-approve', [TransactionController::class, 'bulkApprove'])->name('transactions.bulkApprove');

@@ -59,9 +59,9 @@ async function loadTransactions(filters = {}) {
 async function fetchDropdowns() {
     const res = await fetch('/api/dropdowns');
     const data = await res.json();
-    types = data.types;
-    subtypes = data.subtypes;
-    stores = data.stores;
+    types = data.data.types;
+    subtypes = data.data.subtypes;
+    stores = data.data.stores;
 }
 
 function renderTable() {

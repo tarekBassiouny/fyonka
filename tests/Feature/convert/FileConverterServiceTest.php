@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Convert;
 
 use Tests\TestCase;
 use Illuminate\Http\UploadedFile;

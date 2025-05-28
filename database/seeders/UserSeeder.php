@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'), // use a secure password in prod
             'remember_token' => Str::random(10),
-            'source' => 'dashboard',
+            'role' => 'dashboard',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'), // use a secure password in prod
             'remember_token' => Str::random(10),
-            'source' => 'api',
+            'role' => 'api',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
