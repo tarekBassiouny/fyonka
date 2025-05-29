@@ -11,6 +11,23 @@
             margin: 0;
             padding: 20px;
         }
+
+        .description-cell {
+            text-align: justify;
+            font-size: 14px;
+            padding: 6px;
+
+            /* Ensure proper wrapping and spacing */
+            word-wrap: break-word;
+            white-space: normal;
+
+            /* Optional: control width for layout balance */
+            max-width: 300px;
+
+            /* Optional: enhance readability of justified text */
+            hyphens: auto;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
@@ -19,15 +36,18 @@
         <table width="100%">
             <tr>
                 <td style="text-align: center;">
-                    <div style="font-size: 14px; font-weight: bold; padding-bottom: 15px;">{{ __('store.store_name') }}</div>
+                    <div style="font-size: 14px; font-weight: bold; padding-bottom: 15px;">{{ __('store.store_name') }}
+                    </div>
                     <div style="font-size: 14px; font-weight: bold;">{{ ucfirst($storeName) }}</div>
                 </td>
                 <td style="text-align: center;">
-                    <div style="font-size: 14px; font-weight: bold; padding-bottom: 15px;">{{ __('filters.date_from') }}</div>
+                    <div style="font-size: 14px; font-weight: bold; padding-bottom: 15px;">{{ __('filters.date_from') }}
+                    </div>
                     <div style="font-size: 14px; font-weight: bold;">{{ $dateFrom }}</div>
                 </td>
                 <td style="text-align: center;">
-                    <div style="font-size: 14px; font-weight: bold; padding-bottom: 15px;">{{ __('filters.date_to') }}</div>
+                    <div style="font-size: 14px; font-weight: bold; padding-bottom: 15px;">{{ __('filters.date_to') }}
+                    </div>
                     <div style="font-size: 14px; font-weight: bold;">{{ $dateTo }}</div>
                 </td>
             </tr>
@@ -61,18 +81,21 @@
             </td>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.gross_profit') }}</div>
-                <div style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
+                <div
+                    style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
                     {{ number_format($summary['gross_profit']['value'], 2) }}</div>
             </td>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.net_margin') }}</div>
-                <div style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
+                <div
+                    style="font-size: 20px; font-weight: 600; color: {{ $summary['net_margin']['value'] >= 0 ? 'green' : 'red' }};">
                     {{ $summary['net_margin']['value'] }}%
                 </div>
             </td>
             <td>
                 <div style="color: #666; font-weight: 700;">{{ __('generic.expenses') }}</div>
-                <div style="font-size: 20px; font-weight: 600; color: {{ $summary['gross_profit']['value'] >= 0 ? 'green' : 'red' }};">
+                <div
+                    style="font-size: 20px; font-weight: 600; color: {{ $summary['expenses']['value'] >= 0 ? 'green' : 'red' }};">
                     {{ number_format($summary['expenses']['value'], 2) }}</div>
             </td>
         </tr>
@@ -81,10 +104,16 @@
     <table width="100%" style="border-collapse: collapse; margin-top: 30px;">
         <thead>
             <tr style="border-bottom: 1px solid #000;">
-                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">{{ __('generic.date') }}</th>
-                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">{{ __('generic.amount') }}</th>
-                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">{{ __('generic.transaction_type') }}</th>
-                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">{{ __('generic.transaction_subtype') }}</th>
+                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">
+                    {{ __('generic.date') }}</th>
+                <th style="padding: 8px; text-align: justify; font-size: 14px; font-weight: bold; word-wrap: break-word; white-space: normal;">
+                    {{ __('generic.description') }}</th>
+                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">
+                    {{ __('generic.amount') }}</th>
+                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">
+                    {{ __('generic.transaction_type') }}</th>
+                <th style="padding: 8px; text-align: center; font-size: 14px; font-weight: bold;">
+                    {{ __('generic.transaction_subtype') }}</th>
             </tr>
         </thead>
         <tbody>
@@ -92,6 +121,9 @@
                 <tr>
                     <td style="padding: 6px; text-align: center; font-size: 14px;">
                         {{ \Carbon\Carbon::parse($txn->date)->format('M j, Y') }}
+                    </td>
+                    <td class="description-cell">
+                        {{ $txn->description ?? '-' }}
                     </td>
                     <td
                         style="padding: 6px; text-align: center; font-size: 14px; color: {{ $txn->transactionType?->name === 'income' ? 'green' : 'red' }};">
