@@ -15,5 +15,6 @@ return [
     "amount" => "Betrag",
     "transaction_type" => "Typ",
     "transaction_subtype" => "Ausgabentyp",
-    "no_transactions_available" => "Keine Transaktionen verfügbar"
+    "no_transactions_available" => "Keine Transaktionen verfügbar",
+    'description' => 'Beschreibung',
 ];
